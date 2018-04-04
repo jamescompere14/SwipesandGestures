@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.view.MotionEvent;
 import android.view.GestureDetector;
@@ -14,6 +15,7 @@ public class MainActivity extends AppCompatActivity implements  GestureDetector.
 
     private TextView message;
     private GestureDetectorCompat gestureDetectorCompat;
+    private RelativeLayout layout;
 
 
     @Override
@@ -22,6 +24,7 @@ public class MainActivity extends AppCompatActivity implements  GestureDetector.
         setContentView(R.layout.activity_main);
 
         message = findViewById(R.id.message);
+        layout = findViewById(R.id.layout);
         this.gestureDetectorCompat = new GestureDetectorCompat(this,this);
         gestureDetectorCompat.setOnDoubleTapListener(this);
     }
@@ -34,53 +37,53 @@ public class MainActivity extends AppCompatActivity implements  GestureDetector.
 
     @Override
     public boolean onSingleTapConfirmed(MotionEvent e) {
-        message.setText("onSingleTapConfirmed");
+        message.setText("Single Tap Confirmed");
         return true;
     }
 
     @Override
     public boolean onDoubleTap(MotionEvent e) {
-        message.setText("onDoubleTap");
+        message.setText("Double Tap");
         return true;
     }
 
     @Override
     public boolean onDoubleTapEvent(MotionEvent e) {
-        message.setText("onDoubleTapEvent");
+        message.setText("Double Tap Event");
         return true;
     }
 
     @Override
     public boolean onDown(MotionEvent e) {
-        message.setText("onDown");
+        message.setText("Down Gesture");
         return true;
     }
 
     @Override
     public void onShowPress(MotionEvent e) {
-        message.setText("onShowPress");
+        message.setText("Show Press");
     }
 
     @Override
     public boolean onSingleTapUp(MotionEvent e) {
-        message.setText("onSingleTapUp");
+        message.setText("Single Tap Up");
         return true;
     }
 
     @Override
     public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
-        message.setText("onScroll");
+        message.setText("Scrolling Scrolling Scrolling");
         return true;
     }
 
     @Override
     public void onLongPress(MotionEvent e) {
-        message.setText("onLongPress");
+        message.setText("You've been pressing down for a long time");
     }
 
     @Override
     public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
-        message.setText("onFling");
+        message.setText("FLING");
         return true;
     }
 
