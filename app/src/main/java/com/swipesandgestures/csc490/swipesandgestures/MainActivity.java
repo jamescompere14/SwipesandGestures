@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity implements  GestureDetector.
     private RelativeLayout layout;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,6 +74,12 @@ public class MainActivity extends AppCompatActivity implements  GestureDetector.
     @Override
     public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
         message.setText("Scrolling Scrolling Scrolling");
+        final int min = 120;
+        if(min < e1.getY() - e2.getY()) {
+            message.setHeight(message.getHeight() + 20);
+        } else if (-min > e1.getY() - e2.getY()){
+            message.setHeight(message.getHeight() - 20);
+        }
         return true;
     }
 
@@ -84,6 +91,7 @@ public class MainActivity extends AppCompatActivity implements  GestureDetector.
     @Override
     public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
         message.setText("FLING");
+
         return true;
     }
 
