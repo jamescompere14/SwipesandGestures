@@ -5,7 +5,6 @@
     android:id="@+id/layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/blueBackground"
     tools:context="com.swipesandgestures.csc490.swipesandgestures.MainActivity">
 
     <TextView
@@ -13,9 +12,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
+        android:layout_centerInParent="true"
         android:contentDescription="Message"
         android:text="@string/message"
-        tools:layout_editor_absoluteX="163dp"
-        tools:layout_editor_absoluteY="228dp" />
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="163dp" />
 </RelativeLayout>
